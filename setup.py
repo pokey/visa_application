@@ -11,12 +11,6 @@ with open('README.rst') as readme_file:
 with open('HISTORY.rst') as history_file:
     history = history_file.read()
 
-requirements = ['Click>=6.0', ]
-
-setup_requirements = [ ]
-
-test_requirements = [ ]
-
 setup(
     author="Pokey Rule",
     author_email='pokey.rule@gmail.com',
@@ -39,16 +33,21 @@ setup(
             'visa_application=visa_application.cli:main',
         ],
     },
-    install_requires=requirements,
+    install_requires=[
+        'Click>=7.0',
+        'PyPDF2>=1.26.0',
+        'jinja2>=2.10.1',
+        'pyyaml>=5.1',
+    ],
     license="MIT license",
     long_description=readme + '\n\n' + history,
     include_package_data=True,
     keywords='visa_application',
     name='visa_application',
     packages=find_packages(include=['visa_application']),
-    setup_requires=setup_requirements,
+    setup_requires=[],
     test_suite='tests',
-    tests_require=test_requirements,
+    tests_require=[],
     url='https://github.com/pokey/visa_application',
     version='0.1.0',
     zip_safe=False,
